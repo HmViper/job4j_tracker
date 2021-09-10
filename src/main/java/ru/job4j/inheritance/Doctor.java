@@ -5,7 +5,7 @@ public class Doctor extends Profession {
         super(name, surname, education, birthday);
     }
 
-    Diagnosis heal(Pacient pacient) {
+    Diagnosis heal(Patient pacient) {
         return new Diagnosis();
     }
 }

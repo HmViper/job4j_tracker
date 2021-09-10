@@ -5,7 +5,6 @@ public class Builder extends Engineer {
         super(name, surname, education, birthday);
     }
 
-    Task build(House house) {
-        return new Task();
+    void build(House house) {
     }
 }
