@@ -20,6 +20,11 @@ public class Library {
         for (Book book : library) {
             System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
         }
+        for (Book book : library) {
+            if(book.getName().contains("Clean code")) {
+                System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
+            }
+        }
 
     }
 }
