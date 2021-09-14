@@ -21,7 +21,7 @@ public class Library {
             System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
         }
         for (Book book : library) {
-            if(book.getName().equals("Robert Martin.Clean code")) {
+            if (("Robert Martin.Clean code").equals(book.getName())) {
                 System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
             }
         }
