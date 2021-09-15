@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.awt.image.DirectColorModel;
 import java.util.Arrays;
 
 public class Tracker {
@@ -53,6 +54,17 @@ public class Tracker {
             item.setId(id);
             items[index] = item;
             rsl = true;
+        }
+        return rsl;
+    }
+
+    public boolean delete(int id) {
+        boolean rsl = false;
+        if (indexOf(id) != -1) {
+            System.arraycopy(items, indexOf(id) + 1, items, indexOf(id), size - indexOf(id) - 1);
+            rsl = true;
+            items[size] = null;
+            size--;
         }
         return rsl;
     }
