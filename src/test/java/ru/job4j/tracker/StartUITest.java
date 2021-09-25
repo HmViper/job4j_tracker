@@ -64,15 +64,16 @@ public class StartUITest {
                 new ExitAction()
         };
         new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
         assertThat(out.toString(), is(
-                "Menu:" + System.lineSeparator()
-                        + "0. Find items by name" + System.lineSeparator()
-                        + "1. Exit program" + System.lineSeparator()
-                        + "=== Find items by name ====" + System.lineSeparator()
-                        + one + System.lineSeparator()
-                        + "Menu:" + System.lineSeparator()
-                        + "0. Find items by name" + System.lineSeparator()
-                        + "1. Exit program" + System.lineSeparator()
+                "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit program" + ln
+                        + "=== Find items by name ====" + ln
+                        + one + ln
+                        + "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit program" + ln
         ));
     }
 
@@ -89,15 +90,16 @@ public class StartUITest {
                 new ExitAction()
         };
         new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
         assertThat(out.toString(), is(
-                "Menu:" + System.lineSeparator()
-                        + "0. Find item by id" + System.lineSeparator()
-                        + "1. Exit program" + System.lineSeparator()
-                        + "=== Find item by id ====" + System.lineSeparator()
-                        + one + System.lineSeparator()
-                        + "Menu:" + System.lineSeparator()
-                        + "0. Find item by id" + System.lineSeparator()
-                        + "1. Exit program" + System.lineSeparator()
+                "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit program" + ln
+                        + "=== Find item by id ====" + ln
+                        + one + ln
+                        + "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit program" + ln
         ));
     }
 
