@@ -7,22 +7,20 @@ public class UserStore {
         for (User user : users) {
             if (user.getUserName().equals(login)) {
                 rsl = user;
+                break;
             }
         }
-        if (rsl != null) {
-            return rsl;
-        } else {
+        if (rsl == null) {
             throw new UserNotFoundException("User not found");
         }
+        return rsl;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (user.isValid() && user.getUserName().length() > 3) {
-            return true;
-        } else {
+        if (!user.isValid() && user.getUserName().length() < 3) {
             throw new UserInvalidException("User not valid or name less than 3 symbols");
         }
-
+        return true;
     }
 
     public static void main(String[] args) {
