@@ -17,7 +17,7 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (!user.isValid() && user.getUserName().length() < 3) {
+        if (!user.isValid() || user.getUserName().length() < 3) {
             throw new UserInvalidException("User not valid or name less than 3 symbols");
         }
         return true;
