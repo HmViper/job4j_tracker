@@ -11,8 +11,8 @@ public class Tracker {
     private List<Item> items = new ArrayList<Item>();
 
     public Item add(Item item) {
+        item.setId(ids++);
         items.add(item);
-        ids++;
         return item;
     }
 
