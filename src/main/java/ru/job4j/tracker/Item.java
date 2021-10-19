@@ -5,24 +5,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Item {
+    private static final DateTimeFormatter FORMATTER =
+            DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();
-    private static final DateTimeFormatter FORMATTER =
-            DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Item item = (Item) o;
-        return id == item.id && name.equals(item.name) && created.equals(item.created);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, created);
-    }
 
     public Item() {
 
@@ -55,6 +42,19 @@ public class Item {
 
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return id == item.id && name.equals(item.name) && created.equals(item.created);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, created);
     }
 
     @Override
