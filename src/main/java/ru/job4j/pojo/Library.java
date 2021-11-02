@@ -18,11 +18,13 @@ public class Library {
         library[0] = library[3];
         library[3] = temp;
         for (Book book : library) {
-            System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
+            System.out.println("Книга: " + book.getName() + ". Кол-во страниц: "
+                    + book.getPages());
         }
         for (Book book : library) {
             if (("Robert Martin.Clean code").equals(book.getName())) {
-                System.out.println("Книга: " + book.getName() + ". Кол-во страниц: " + book.getPages());
+                System.out.println("Книга: " + book.getName() + ". Кол-во страниц: "
+                        + book.getPages());
             }
         }
 

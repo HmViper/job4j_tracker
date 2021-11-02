@@ -18,7 +18,7 @@ public class TriangleTest {
     }
 
     @Test
-    public void NoArea() {
+    public void noArea() {
         Point a = new Point(5, 0);
         Point b = new Point(1, 0);
         Point c = new Point(1, 0);

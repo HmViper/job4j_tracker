@@ -12,6 +12,7 @@ public class Profession {
         this.education = education;
         this.birthday = birthday;
     }
+
     public String getName() {
         return name;
     }

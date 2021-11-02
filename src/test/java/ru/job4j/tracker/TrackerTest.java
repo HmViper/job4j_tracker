@@ -149,6 +149,4 @@ public class TrackerTest {
                 new Item("Three", 3), new Item("One", 1));
         assertThat(result, is(expected));
     }
-
-
 }

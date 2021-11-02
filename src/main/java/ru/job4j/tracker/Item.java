@@ -46,8 +46,12 @@ public class Item {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
         return id == item.id && name.equals(item.name) && created.equals(item.created);
     }
@@ -59,10 +63,10 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created=" + created.format(FORMATTER) +
-                '}';
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", created=" + created.format(FORMATTER)
+                + '}';
     }
 }
