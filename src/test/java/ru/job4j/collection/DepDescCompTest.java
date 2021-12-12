@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.lessThan;
 
 public class DepDescCompTest {
 
