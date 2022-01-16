@@ -20,7 +20,7 @@ public class BankService {
      */
     public void addUser(User user) {
         if (user != null) {
-            users.putIfAbsent(user, new ArrayList<Account>());
+            users.putIfAbsent(user, new ArrayList<>());
         }
     }
 
@@ -50,14 +50,11 @@ public class BankService {
      * @return найденный клиент по паспорту
      */
     public User findByPassport(String passport) {
-        if (passport != null) {
-            for (User user : users.keySet()) {
-                if (passport.equals(user.getPassport())) {
-                    return user;
-                }
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -69,16 +66,15 @@ public class BankService {
      * @param requisite реквизиты искомого счета
      * @return найденный счет
      */
+
     public Account findByRequisite(String passport, String requisite) {
         if (requisite != null) {
             User user = findByPassport(passport);
             if (user != null) {
-                List<Account> accounts = users.get(user);
-                for (Account account : accounts) {
-                    if (requisite.equals(account.getRequisite())) {
-                        return account;
-                    }
-                }
+                return users.get(user)
+                        .stream()
+                        .filter(u -> u.getRequisite().equals(requisite))
+                        .findFirst().orElse(null);
             }
         }
         return null;
