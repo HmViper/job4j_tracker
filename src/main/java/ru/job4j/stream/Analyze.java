@@ -46,7 +46,7 @@ public class Analyze {
                                 .mapToDouble(Subject::getScore)
                                 .sum()))
                 .max(Comparator
-                        .comparing(x -> (int) x.getScore()))
+                        .comparingDouble(Tuple::getScore))
                 .orElse(null);
     }
 
@@ -55,7 +55,6 @@ public class Analyze {
                 .flatMap(Collection::stream)
                 .collect(Collectors
                         .groupingBy(Subject::getName,
-                                LinkedHashMap::new,
                                 Collectors.summingDouble(Subject::getScore)))
                 .entrySet().stream()
                 .map(name -> new Tuple(name.getKey(), name.getValue()))
